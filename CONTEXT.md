@@ -30,10 +30,7 @@ This document provides complete context about the portfolio website for Akib Has
   - Preloader loading sequence and initial reveal animations.
   - GSAP infinite marquee animation.
   - ScrollTrigger animations for About (`.split-text`), Experience (`.exp-item`), and Projects (`.project-item`).
-- `fetch.py`: A utility Python script that uses `urllib` and `re` to scrape and download the CUET logo from Wikipedia.
 - `Akib_Hasan_Resume.pdf`: The owner's resume file.
-- `cuet-logo.png`: Image asset fetched by the python script.
-- `images/`: Directory for storing local images.
 
 ## 4. Key Sections & Features
 1. **Preloader:** A loading screen with a percentage counter that animates out once loading hits 100%, followed by the Hero reveal.
