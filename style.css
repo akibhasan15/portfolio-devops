@@ -31,12 +31,15 @@ html.lenis body {
     overflow: hidden;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--bg);
     color: var(--text);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
 }
 
 /* Custom Cursor */
@@ -498,8 +501,11 @@ body {
     padding: 4rem 0;
     background: var(--text);
     color: var(--bg);
-    transform: rotate(-2deg) scale(1.05);
+    transform: rotate(-2deg);
     margin: 5rem 0;
+    width: 110vw;
+    position: relative;
+    left: -5vw;
 }
 
 .marquee {
@@ -520,7 +526,7 @@ body {
 
 /* About */
 .about {
-    padding: 10rem 4rem;
+    padding: 5rem 4rem;
     position: relative;
     overflow: hidden;
 }
@@ -631,6 +637,7 @@ body {
     font-size: 1.5rem;
     line-height: 1.5;
     color: var(--text);
+    text-align: justify;
 }
 
 .lead-text {
@@ -689,7 +696,7 @@ body {
 
 /* Experience */
 .experience {
-    padding: 5rem 4rem 15rem 4rem;
+    padding: 5rem 4rem;
     position: relative;
 }
 
@@ -797,7 +804,7 @@ body {
 }
 
 .exp-item.active .jd-content {
-    max-height: 1200px;
+    max-height: 2500px;
     opacity: 1;
 }
 
@@ -927,17 +934,41 @@ body {
     transition-delay: 0.40s;
 }
 
-.exp-item.active .jd-content .skill-tag {
+.exp-item.active .jd-content li:nth-child(7) {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.45s;
+}
+
+.exp-item.active .jd-content li:nth-child(8) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.50s;
+}
+
+.exp-item.active .jd-content li:nth-child(9) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.55s;
+}
+
+.exp-item.active .jd-content li:nth-child(10) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.60s;
+}
+
+.exp-item.active .jd-content .skill-tag {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.65s;
 }
 
 /* Projects, Certifications, Education */
 .projects,
 .certifications,
 .education {
-    padding: 5rem 4rem 15rem 4rem;
+    padding: 5rem 4rem;
     position: relative;
 }
 
@@ -1052,6 +1083,15 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* 0. Preloader */
+    .preloader-content {
+        width: 90%;
+    }
+    
+    .cmd-line {
+        font-size: 0.75rem;
+    }
+
     /* 1. Navigation */
     .nav {
         top: auto;
@@ -1061,11 +1101,13 @@ body {
         flex-direction: column;
         gap: 0.5rem;
         border-radius: 20px;
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 94, 0, 0.05);
     }
     
     .nav.scrolled {
         padding: 0.8rem;
         width: 95%;
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 94, 0, 0.15);
     }
 
     .nav-brand {
