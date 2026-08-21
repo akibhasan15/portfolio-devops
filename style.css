@@ -539,6 +539,7 @@ body {
     letter-spacing: -0.02em;
     text-transform: uppercase;
     margin: 0;
+    padding: 0 2vw;
     white-space: nowrap;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     transform: translateY(110%);
