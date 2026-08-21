@@ -91,6 +91,28 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Mobile Nav Toggle
+const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', () => {
+        nav.classList.toggle('mobile-active');
+        mobileNavToggle.classList.toggle('open');
+        document.body.classList.toggle('nav-open');
+    });
+
+    // Close mobile nav when clicking a link
+    const mobileLinks = document.querySelectorAll('.nav-links a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('mobile-active')) {
+                nav.classList.remove('mobile-active');
+                mobileNavToggle.classList.remove('open');
+                document.body.classList.remove('nav-open');
+            }
+        });
+    });
+}
+
 // JD Accordion Interaction
 const expHeaders = document.querySelectorAll('.exp-header');
 expHeaders.forEach(header => {
