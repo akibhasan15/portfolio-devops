@@ -1,52 +1,94 @@
 # Portfolio Website Context for Antigravity
 
-This document provides complete context about the portfolio website for Akib Hasan, a DevOps Engineer. It is designed to help AI assistants (like Antigravity) quickly understand the project structure, technologies, and features when starting from a new session.
+This document provides complete context about the portfolio website for Akib Hasan, a DevOps & Cloud Engineer. It is designed to help AI assistants (like Antigravity) quickly understand the project structure, design system, interactive components, and architecture when starting a new session.
+
+---
 
 ## 1. Project Overview
-- **Owner:** Akib Hasan (DevOps Engineer)
-- **Role Highlights:** AWS Cloud Infrastructure, CI/CD Automation, Infrastructure as Code (Terraform), Kubernetes, Production Reliability.
+- **Owner:** Akib Hasan (DevOps & Cloud Engineer)
+- **Role Highlights:** AWS & Azure Cloud Architecture, Kubernetes & Docker Workloads, Infrastructure as Code (Terraform & CloudFormation), CI/CD Automation (Jenkins & GitHub Actions), Observability (Prometheus & Grafana), Production Reliability & SRE.
 - **Location:** Dhaka, BD.
 - **Experience:** 3+ years DevOps, 6+ years overall IT.
 
+---
+
 ## 2. Tech Stack
-- **HTML5:** Semantic structure for sections.
-- **CSS3:** Custom styling (no framework like Tailwind or Bootstrap). Uses CSS variables for theming.
-- **JavaScript (Vanilla):** For logic, interactions, and orchestrating animations.
-- **GSAP & ScrollTrigger (v3.12.5):** For complex, high-performance animations, scroll-based reveals, and continuous marquees.
-- **Lenis Smooth Scroll (v1.0.39):** For fluid, smooth scrolling experiences.
+- **HTML5:** Modern semantic structure with strict viewport responsiveness and SEO metadata.
+- **CSS3 (Vanilla):** Custom design system utilizing CSS custom properties (variables), high-performance glassmorphism, 3D perspective transforms, and refined responsive media queries. No external CSS frameworks (Tailwind/Bootstrap).
+- **JavaScript (Vanilla ES6+):** Component logic, canvas simulations, dynamic terminal log streams, and interactive event handlers.
+- **GSAP & ScrollTrigger (v3.12.5):** Advanced viewport animations, staggered reveals, magnetic button interactions, and dual-track infinite marquees.
+- **Lenis Smooth Scroll (v1.0.39):** Hardware-accelerated smooth scrolling.
+- **HTML5 Canvas:** Interactive 60fps cloud topology network mesh with DPI scaling and magnetic cursor physics.
+
+---
 
 ## 3. File Structure
-- `index.html`: The core HTML document containing all sections of the single-page portfolio (Hero, Marquee, About, Experience, Projects, Certifications, Education, Contact).
-- `style.css`: Contains all styling. Key highlights include:
-  - Custom cursor (`.cursor`, `.hovered`, `.reading`).
-  - Preloader styling.
-  - "Rising Aura" animation for the hero section heading.
-  - Interactive accordion styles for the Experience section.
-  - Responsive design media queries (max-width: 900px, 768px).
-- `script.js`: Handles all interactions and animations.
-  - Initializes Lenis smooth scrolling.
-  - Custom cursor movement and hover states.
-  - Accordion logic for the Experience section (`.jd-toggle-btn`).
-  - Preloader loading sequence and initial reveal animations.
-  - GSAP infinite marquee animation.
-  - ScrollTrigger animations for About (`.split-text`), Experience (`.exp-item`), and Projects (`.project-item`).
-- `Akib_Hasan_Resume.pdf`: The owner's resume file.
+- `index.html`: The core single-page portfolio document (Navbar, Hero with Canvas & Terminals, Dual Marquee, About, Experience, Projects, Certifications, Education, Contact).
+- `style.css`: Comprehensive design tokens, layout rules, component styles, and mobile responsive media queries.
+- `script.js`: Interactive logic including Lenis initialization, canvas simulation, terminal log engine, custom cursor states, GSAP tweens, and mobile menu toggling.
+- `Akib_Hasan_Resume.pdf`: Professional resume artifact.
+- `akib_hasan_portfolio_cropped.png`: High-resolution grayscale portrait photo for the About section.
+- `cuet-logo.png` & `square-logo.png`: Education and institutional branding assets.
 
-## 4. Key Sections & Features
-1. **Preloader:** A loading screen with a percentage counter that animates out once loading hits 100%, followed by the Hero reveal.
-2. **Custom Cursor:** A custom circular cursor that follows the mouse. It expands on links (`.hovered`) and changes to a small accent-colored dot when reading accordion content (`.reading`).
-3. **Hero Section:** Features a large typography-based title with a "Rising Aura" continuous gradient animation and a sub-headline revealing skills.
-4. **Marquee Section:** An infinitely scrolling banner displaying key DevOps skills.
-5. **About Section:** Split text scroll animations. Includes a stats section.
-6. **Experience Section:** Interactive accordions. Clicking "VIEW ROLE" expands the item to show detailed responsibilities with staggered item animations.
-7. **Projects, Certifications, Education:** Grid/flex lists of items with scroll-triggered entry animations.
-8. **Contact Section:** Huge text "LET'S TALK" with social and email links.
+---
 
-## 5. Design System
-- **Background Color (`--bg`):** `#091F1A` (Dark Greenish)
-- **Text Color (`--text`):** `#E0ECE9` (Light Mint/White)
-- **Accent Color (`--accent`):** `#00F0B5` (Bright Cyan/Mint)
-- **Heading Font:** 'Anton', sans-serif (used for large, impactful text).
-- **Body Font:** 'Inter', sans-serif (used for descriptions and details).
+## 4. Key Sections & Interactive Features
 
-This document serves as the primary source of truth for the project's state. When modifying the project, adhere to the existing design system (colors, fonts, animation libraries) unless instructed otherwise.
+1. **Terminal Preloader:**
+   - Linux bash prompt simulation (`akib@portfolio:~`) typing initialization commands with synchronized progress bar and percentage counter.
+   - Splits top/bottom curtain panels upon completion to reveal the hero section.
+
+2. **Cyber Glass Floating Dock Navigation:**
+   - **Desktop:** Multi-layered frosted glass dock (`backdrop-filter: blur(24px)`) with Electric Azure rim lighting (`border-top`), holographic brand badge (`AKIB.H`) with pulsing emerald telemetry dot, pill link hover states, and high-energy gradient `HIRE ME ↗` CTA button with arrow animation.
+   - **Mobile:** Fixed Floating Action Button (FAB) hamburger menu anchored to the viewport opening a full-screen frosted glass overlay menu.
+
+3. **Hero Section (Cloud Architecture HUD):**
+   - **Interactive Canvas Network Mesh:** Nodes and topology links drifting organically across the background that dynamically link to the cursor with magnetic proximity force.
+   - **Live Story Terminals:** 3 glassmorphic terminals (`monitoring@auth-service:~`, `admin@k8s-cluster:~`, `akib@incident-response:~`) with 3D perspective tilts rendering real-time simulated Kubernetes DDoS mitigation & autoscaling logs.
+   - **Central Glitch Display:** Geometric `Orbitron` heading with metallic iced-to-electric-azure gradient fill, subtle cyber glitch bursts, and a pulsing status pill `[ ● 99.99% UPTIME // CLOUD & K8S ARCHITECT ]`.
+
+4. **Dual-Track Cyber Tech Ribbon (Marquee):**
+   - Bi-directional counter-scrolling ribbons (Track 1: Cloud & IaC drifting left; Track 2: Observability & SRE drifting right).
+   - Infinity edge fade masks (`mask-image`), glowing status icons (`◆`, `✦`), and interactive hover deceleration (slows down to 35% speed on hover).
+
+5. **About Me Section:**
+   - High-contrast grayscale portrait with hover saturation effect.
+   - Clean typographic layout with lead text highlights, stats counter grid, and GSAP scroll-triggered text reveal.
+
+6. **Experience Section:**
+   - Interactive accordions with company branding, employment metadata, and expandable responsibilities (`.jd-toggle-btn`).
+
+7. **Projects Section:**
+   - Showcase of production deployments including `My ROBI Application`, `MY CIRKLE APPLICATION` (with Play Store, App Store, and Web links), `Airtel Buzz`, `bdapps`, and `Smart Inventory System`.
+
+8. **Certifications & Education:**
+   - Red Hat Certified System Administrator (RHCSA RHEL v9), AWS Solutions Architect Associate (SAA-C03), and University degrees (CUET & RGCC).
+
+9. **Contact Section:**
+   - Sleek interactive glassmorphic pill cards with inline vector SVG icons (Email, LinkedIn, GitHub) featuring hover shimmer, elevation, and neon glow.
+
+---
+
+## 5. Design System Tokens
+
+```css
+:root {
+    --bg: #06090E;                          /* Obsidian Void (Canvas background) */
+    --bg-panel: rgba(10, 16, 26, 0.85);     /* Frosted Glass Panels */
+    --text: #E6EDF3;                          /* Arctic Ice White */
+    --accent: #FF5E00;                        /* Solar Ember (Primary Action & Highlights) */
+    --accent-glow: rgba(255, 94, 0, 0.45);
+    --cyan: #00F0FF;                          /* Electric Azure (Telemetry & Nodes) */
+    --emerald: #00FF9D;                       /* Matrix Mint (Live Cluster Health) */
+    --font-heading: 'Orbitron', sans-serif;   /* Futuristic Geometric Headings */
+    --font-body: 'Inter', sans-serif;         /* Clean Modern UI Body */
+    --font-mono: 'Fira Code', monospace;      /* Developer Terminals & Code Tags */
+}
+```
+
+---
+
+## 6. Guidelines for Future Maintenance
+- **Adhere to Vanilla Architecture:** Maintain the lightweight pure HTML5/CSS3/Vanilla JS stack without introducing heavyweight frameworks unless explicitly instructed.
+- **Preserve Viewport Constraints:** Ensure all wide containers maintain `max-width: 100vw; overflow-x: hidden;` to eliminate horizontal scroll issues on mobile devices.
+- **Maintain High-Tech DevOps Aesthetic:** Utilize the dark obsidian palette, terminal syntax colors, and glassmorphic depth for new UI components.
