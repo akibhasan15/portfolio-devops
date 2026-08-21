@@ -37,6 +37,15 @@ html.lenis body {
 
 html, body {
     overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+}
+
+.main-wrapper {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    position: relative;
 }
 
 body {
@@ -1557,8 +1566,16 @@ body {
     }
 
     /* Marquee */
+    .marquee-section {
+        transform: none;
+        width: 100%;
+        left: 0;
+        margin: 2.5rem 0;
+        overflow: hidden;
+    }
+
     .marquee-inner {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     /* 3. Section Padding */
@@ -1567,15 +1584,30 @@ body {
     .projects,
     .certifications,
     .education {
-        padding: 2.5rem 1.5rem;
+        padding: 3rem 1.25rem;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
     
     .contact {
-        padding: 2.5rem 1.5rem 6rem 1.5rem; /* Extra padding for bottom dock */
+        padding: 2.5rem 1.25rem 6rem 1.25rem;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
 
     .about-grid {
+        grid-template-columns: 1fr;
         gap: 2rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-image-wrapper {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
     }
 
     /* 4. Experience & Projects */
@@ -1679,8 +1711,17 @@ body {
     }
     
     .lead-text {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        line-height: 1.5;
         margin-bottom: 1.2rem;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+
+    .highlight {
+        font-size: 1em;
+        padding: 0 2px;
+        white-space: normal;
     }
 
     .stat-num {
