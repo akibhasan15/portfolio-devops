@@ -31,23 +31,6 @@ document.addEventListener('mousemove', (e) => {
         duration: 0.1,
         ease: 'power2.out'
     });
-
-    // Parallax Birds
-    const birdSvgs = document.querySelectorAll('.bird svg');
-    const x = (window.innerWidth / 2 - e.clientX) / 20;
-    const y = (window.innerHeight / 2 - e.clientY) / 20;
-    
-    birdSvgs.forEach(svg => {
-        const depth = parseFloat(svg.getAttribute('data-depth')) || 1;
-        const baseRotation = svg.getAttribute('data-rotation') || 0;
-        gsap.to(svg, {
-            x: x * depth,
-            y: y * depth,
-            rotation: baseRotation,
-            duration: 1,
-            ease: 'power1.out'
-        });
-    });
 });
 
 links.forEach(link => {
@@ -152,85 +135,145 @@ jdContents.forEach(content => {
 // Preloader & Hero Animation
 const tl = gsap.timeline();
 
-// Generate Flying Birds dynamically
-const birdsContainer = document.getElementById('birds-container');
-if (birdsContainer) {
-    const numBirds = 30;
-    
-    const svgTemplate = `
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
-            <defs>
-                <linearGradient id="birdGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#d0d0d0;stop-opacity:1" />
-                </linearGradient>
-                <linearGradient id="birdGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#e0e0e0;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#909090;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            <!-- Organic 3D bird/leaf shape inspired by the photo -->
-            <path d="M 10 50 C 35 25, 75 35, 95 45 C 65 45, 45 55, 10 50 Z" fill="url(#birdGrad)"/>
-            <path d="M 10 50 C 45 55, 65 45, 95 45 C 80 65, 45 75, 25 70 Z" fill="url(#birdGradDark)"/>
-        </svg>
-    `;
-    
-    for (let i = 0; i < numBirds; i++) {
-        const wrapper = document.createElement('div');
-        wrapper.classList.add('bird');
-        wrapper.innerHTML = svgTemplate;
-        
-        // Randomize properties for natural parallax
-        const top = Math.random() * 90; // 0% to 90%
-        const width = Math.random() * (90 - 20) + 20; // 20px to 90px
-        const duration = Math.random() * (50 - 20) + 20; // 20s to 50s
-        const delay = Math.random() * -50; // -50s to 0s
-        
-        // Depth-of-field logic
-        const depth = width / 50; // Scale depth by width
-        let blur = 0;
-        if (width > 60) blur = 4; // Close to camera, out of focus
-        else if (width < 30) blur = 2; // Far away, slightly out of focus
-        
-        // Setup inner SVG
-        const svgElement = wrapper.querySelector('svg');
-        const baseRotation = Math.random() * 90 - 45; // -45 to 45 degrees
-        svgElement.setAttribute('data-rotation', baseRotation);
-        svgElement.setAttribute('data-depth', depth);
-        
-        // Creative Leaf Fluttering Animation
-        gsap.set(svgElement, { rotation: baseRotation });
-        
-        // Randomize flutter properties
-        const flutterDuration = Math.random() * 2 + 1.5; // 1.5s to 3.5s
-        const flutterAngle = Math.random() * 60 + 30; // 30 to 90 degrees
-        const bobAmount = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 40 + 20); // 20 to 60px
-        
-        gsap.to(svgElement, {
-            rotation: baseRotation + flutterAngle,
-            y: bobAmount,
-            duration: flutterDuration,
-            ease: "sine.inOut",
-            yoyo: true,
-            repeat: -1,
-            delay: Math.random() * -2
-        });
-        
-        if (blur > 0) {
-            wrapper.style.filter = `blur(${blur}px)`;
-        }
-        
-        wrapper.style.top = `${top}%`;
-        wrapper.style.width = `${width}px`;
-        wrapper.style.height = `${width}px`;
-        wrapper.style.animationDuration = `${duration}s`;
-        wrapper.style.animationDelay = `${delay}s`;
-        
-        // Add varying opacity
-        wrapper.style.opacity = blur > 2 ? 0.15 : (Math.random() * 0.3 + 0.2);
-        
-        birdsContainer.appendChild(wrapper);
+// Interactive Cloud Network Mesh
+const meshCanvas = document.getElementById('network-mesh');
+if (meshCanvas) {
+    const ctx = meshCanvas.getContext('2d');
+    let width, height;
+    let particles = [];
+    const mouse = { x: null, y: null, radius: 150 };
+
+    function resize() {
+        const dpr = window.devicePixelRatio || 1;
+        width = meshCanvas.parentElement.offsetWidth;
+        height = meshCanvas.parentElement.offsetHeight;
+        meshCanvas.width = width * dpr;
+        meshCanvas.height = height * dpr;
+        meshCanvas.style.width = width + 'px';
+        meshCanvas.style.height = height + 'px';
+        ctx.scale(dpr, dpr);
+        initParticles();
     }
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 1.8 + 1.2;
+            this.isAccent = Math.random() < 0.22;
+            this.baseColor = this.isAccent ? '255, 94, 0' : '0, 255, 204';
+            this.alpha = Math.random() * 0.4 + 0.3;
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < 0 || this.x > width) this.vx *= -1;
+            if (this.y < 0 || this.y > height) this.vy *= -1;
+
+            if (mouse.x !== null && mouse.y !== null) {
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < mouse.radius) {
+                    const force = (mouse.radius - dist) / mouse.radius;
+                    this.x -= (dx / dist) * force * 1.2;
+                    this.y -= (dy / dist) * force * 1.2;
+                }
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${this.baseColor}, ${this.alpha})`;
+            ctx.shadowBlur = this.isAccent ? 10 : 6;
+            ctx.shadowColor = `rgba(${this.baseColor}, 0.5)`;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+        }
+    }
+
+    function initParticles() {
+        particles = [];
+        const count = Math.min(Math.floor((width * height) / 15000), 60);
+        for (let i = 0; i < count; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function drawLines() {
+        const maxDist = 130;
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < maxDist) {
+                    const alpha = (1 - dist / maxDist) * 0.2;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    const isOrange = particles[i].isAccent || particles[j].isAccent;
+                    ctx.strokeStyle = isOrange 
+                        ? `rgba(255, 94, 0, ${alpha * 1.3})` 
+                        : `rgba(0, 255, 204, ${alpha})`;
+                    ctx.lineWidth = 0.8;
+                    ctx.stroke();
+                }
+            }
+
+            if (mouse.x !== null && mouse.y !== null) {
+                const dx = mouse.x - particles[i].x;
+                const dy = mouse.y - particles[i].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < mouse.radius) {
+                    const alpha = (1 - dist / mouse.radius) * 0.45;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.strokeStyle = `rgba(255, 94, 0, ${alpha})`;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        for (let p of particles) {
+            p.update();
+            p.draw();
+        }
+        drawLines();
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', resize);
+
+    window.addEventListener('mousemove', (e) => {
+        const rect = meshCanvas.getBoundingClientRect();
+        if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        } else {
+            mouse.x = null;
+            mouse.y = null;
+        }
+    });
+
+    window.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    resize();
+    animate();
 }
 let progress = 0;
 const progressText = document.getElementById('progress-text');

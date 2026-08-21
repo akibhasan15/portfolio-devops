@@ -697,8 +697,8 @@ body {
     overflow: hidden;
 }
 
-/* Flying Birds Background */
-.birds-container {
+/* Interactive Cloud Network Mesh Canvas */
+.network-mesh-canvas {
     position: absolute;
     top: 0;
     left: 0;
@@ -706,55 +706,6 @@ body {
     height: 100%;
     z-index: 0;
     pointer-events: none;
-}
-
-.bird {
-    position: absolute;
-    color: rgba(255, 255, 255, 0.03);
-    will-change: transform;
-    animation: flyAcross linear infinite;
-}
-
-.bird-1 {
-    top: 15%;
-    width: 70px;
-    animation-duration: 35s;
-    animation-delay: -5s;
-}
-
-.bird-2 {
-    top: 35%;
-    width: 45px;
-    animation-duration: 45s;
-    animation-delay: -20s;
-}
-
-.bird-3 {
-    top: 65%;
-    width: 90px;
-    animation-duration: 25s;
-    animation-delay: -10s;
-}
-
-.bird-4 {
-    top: 80%;
-    width: 55px;
-    animation-duration: 40s;
-    animation-delay: 0s;
-}
-
-@keyframes flyAcross {
-    0% {
-        transform: translateX(-150px) translateY(0) scale(1);
-    }
-
-    50% {
-        transform: translateX(50vw) translateY(-25px) scale(1.05);
-    }
-
-    100% {
-        transform: translateX(110vw) translateY(15px) scale(0.95);
-    }
 }
 
 .section-heading {
