@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AKIB HASAN — DEVOPS</title>
+    <title>EMIR QASSIM — CYBER SECURITY</title>
     <link rel="stylesheet" href="style.css">
     <!-- GSAP & Lenis CDNs -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -30,10 +31,10 @@
         <div class="preloader-content terminal-loader">
             <div class="terminal-loader-header">
                 <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                <p>akib@portfolio:~</p>
+                <p>root@kali:~</p>
             </div>
             <div class="terminal-loader-body">
-                <p class="cmd-line"><span class="prompt">$</span> <span id="loading-cmd"></span><span class="cursor-blink">_</span></p>
+                <p class="cmd-line"><span class="prompt">root@kali:~#</span> <span id="loading-cmd"></span><span class="cursor-blink">_</span></p>
                 <div class="progress-bar-container terminal-progress">
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
@@ -45,28 +46,26 @@
     <!-- Main Wrapper for Lenis -->
     <div class="main-wrapper">
 
-        <nav class="nav">
-            <div class="nav-brand">AKIB.H</div>
+        <nav class="nav" id="main-nav">
+            <div class="nav-brand">EQ<span class="blink-cursor">_</span></div>
             <div class="nav-links">
                 <a href="#about" class="hover-link">ABOUT</a>
                 <a href="#experience" class="hover-link">EXPERIENCE</a>
                 <a href="#projects" class="hover-link">PROJECTS</a>
+                <a href="#skills" class="hover-link">SKILLS</a>
                 <a href="#certifications" class="hover-link">CERTIFICATIONS</a>
                 <a href="#education" class="hover-link">EDUCATION</a>
                 <a href="#contact" class="hover-link">CONTACT</a>
-                <a href="https://linkedin.com/in/akibhasan15" target="_blank" class="nav-cta">HIRE ME ↗</a>
+                <a href="mailto:emirqassim@outlook.com" class="nav-cta">GET IN TOUCH ↗</a>
             </div>
         </nav>
 
         <section class="hero">
-            <!-- Flying Birds Background -->
-            <div class="birds-container" id="birds-container"></div>
-            
             <!-- Background Story Terminals -->
             <div class="bg-terminal bg-terminal-left">
                 <div class="terminal-loader-header">
                     <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                    <p>monitoring@auth-service:~</p>
+                    <p>soc@siem-monitor:~</p>
                 </div>
                 <div class="bg-terminal-body" id="term-monitor">
                     <!-- JS populated -->
@@ -76,7 +75,7 @@
             <div class="bg-terminal bg-terminal-right">
                 <div class="terminal-loader-header">
                     <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                    <p>akib@incident-response:~</p>
+                    <p>analyst@threat-hunt:~</p>
                 </div>
                 <div class="bg-terminal-body" id="term-response">
                     <!-- JS populated -->
@@ -86,7 +85,7 @@
             <div class="bg-terminal bg-terminal-tr">
                 <div class="terminal-loader-header">
                     <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                    <p>admin@k8s-cluster:~</p>
+                    <p>root@metasploit:~</p>
                 </div>
                 <div class="bg-terminal-body" id="term-k8s">
                     <!-- JS populated -->
@@ -95,13 +94,13 @@
 
             <div class="hero-center">
                 <div class="hero-title">
-                    <h1 class="reveal-text">AKIB HASAN</h1>
+                    <h1 class="reveal-text glitch" data-text="EMIR QASSIM">EMIR QASSIM</h1>
                 </div>
                 <div class="hero-meta left fade-in">
-                    <p>DEVOPS ENGINEER</p>
+                    <p>CYBER SECURITY ANALYST</p>
                 </div>
                 <div class="hero-meta right fade-in">
-                    <p>BASED IN DHAKA, BD</p>
+                    <p>DIGITAL FORENSICS</p>
                 </div>
             </div>
 
@@ -119,43 +118,37 @@
         <section class="marquee-section">
             <div class="marquee">
                 <div class="marquee-inner">
-                    <span>AWS & AZURE CLOUD — TERRAFORM & CLOUDFORMATION — JENKINS CI/CD — DOCKER & KUBERNETES — ANSIBLE
-                        AUTOMATION — PROMETHEUS & GRAFANA — ELASTIC STACK — POSTGRESQL HA — PYTHON & BASH SCRIPTING —
-                        LINUX & SECURITY — </span>
-                    <span>AWS & AZURE CLOUD — TERRAFORM & CLOUDFORMATION — JENKINS CI/CD — DOCKER & KUBERNETES — ANSIBLE
-                        AUTOMATION — PROMETHEUS & GRAFANA — ELASTIC STACK — POSTGRESQL HA — PYTHON & BASH SCRIPTING —
-                        LINUX & SECURITY — </span>
+                    <span>ETHICAL HACKING — THREAT HUNTING — DIGITAL FORENSICS — VULNERABILITY ASSESSMENT — PYTHON & JAVASCRIPT —
+                        NETWORK SECURITY — LINUX KALI — METASPLOIT & BURP SUITE — DOCKER — INCIDENT RESPONSE — </span>
+                    <span>ETHICAL HACKING — THREAT HUNTING — DIGITAL FORENSICS — VULNERABILITY ASSESSMENT — PYTHON & JAVASCRIPT —
+                        NETWORK SECURITY — LINUX KALI — METASPLOIT & BURP SUITE — DOCKER — INCIDENT RESPONSE — </span>
                 </div>
             </div>
         </section>
 
         <section class="about" id="about">
-
             <h2 class="section-heading sticky-heading">ABOUT ME</h2>
             <div class="about-grid">
                 <div class="about-image-wrapper">
-                    <img src="./akib_hasan_portfolio_cropped.png" alt="Akib Hasan" class="about-img">
+                    <!-- Placeholder avatar -->
+                    <img src="https://ui-avatars.com/api/?name=Emir+Qassim&background=0a0a0a&color=00ffcc&size=512&font-size=0.33" alt="Emir Qassim" class="about-img">
                     <div class="about-image-backdrop"></div>
                 </div>
                 <div class="about-text-content">
-                    <p class="split-text lead-text">DevOps Engineer with a <span class="highlight">6+ year track
-                            record</span> of driving operational excellence across cloud infrastructure, CI/CD
-                        pipelines, and robust production reliability.</p>
-                    <p class="split-text">Evolving from core network engineering to advanced cloud architecture, I
-                        specialize in building highly resilient AWS and Azure environments, orchestrating Kubernetes
-                        workloads, and automating mission-critical deployments using Terraform and Jenkins.</p>
+                    <p class="split-text lead-text">I am a Cyber Security graduate with a <span class="highlight">strong foundation</span> in ethical hacking, threat hunting, digital forensics, and network security supported by extensive practical work and hands-on security assessments.</p>
+                    <p class="split-text">Experienced in vulnerability assessment, forensic investigation techniques, Python and JavaScript programming, network design and system security through projects. Passionate about cyber defences and developing practical skills within Security Operations, Incident Response or Penetration Testing environments.</p>
                     <div class="about-stats">
                         <div class="stat-item">
-                            <span class="stat-num">6+</span>
-                            <span class="stat-label">Years Experience</span>
+                            <span class="stat-num">BSc</span>
+                            <span class="stat-label">Cyber Security</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-num">AWS</span>
-                            <span class="stat-label">Certified</span>
+                            <span class="stat-num">2:1</span>
+                            <span class="stat-label">Honours</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-num">RHCSA</span>
-                            <span class="stat-label">Certified</span>
+                            <span class="stat-num">SOC</span>
+                            <span class="stat-label">Ready</span>
                         </div>
                     </div>
                 </div>
@@ -169,41 +162,28 @@
                 <div class="exp-item">
                     <div class="exp-header">
                         <div class="exp-left">
-                            <img src="https://www.google.com/s2/favicons?domain=portonics.com&sz=128"
-                                alt="Portonics Logo" class="exp-logo">
                             <div class="exp-meta">
-                                <h3>Operations Engineer</h3>
-                                <p>Portonics Limited</p>
-                                <span>2025 - Present</span>
+                                <h3>Accounts Assistant</h3>
+                                <p>Refine BDL Hotels</p>
+                                <span>2023 - 2025</span>
                             </div>
                         </div>
                         <div class="exp-right">
-                            <button class="jd-toggle-btn">VIEW ROLE ↴</button>
+                            <button class="jd-toggle-btn">VIEW DETAILS ↴</button>
                         </div>
                     </div>
                     <div class="jd-content">
                         <div class="jd-content-inner">
                             <h4 class="jd-header">// KEY RESPONSIBILITIES</h4>
                             <ul>
-                                <li>Support production reliability for Robi/Airtel SingleApp, triaging customer-impacting incidents from ServiceDesk/JIRA/CMS, coordinating RCA, escalations, and closure with Robi, QA, developers, and business teams.</li>
-                                <li>Operate Kubernetes-based production workloads using Argo CD, Jenkins, Harbor, Docker/ctr, and Nginx.</li>
-                                <li>Monitor platform health with Dynatrace, Kibana/ELK, Grafana, Prometheus, Node Exporter, Fluentd, and flat-file logs; investigate API failures, latency, log-buffering, disk utilization, and infrastructure alerts.</li>
-                                <li>Maintain PostgreSQL/PGPool and Redis Sentinel reliability through replication checks/restores, controlled reboot MOPs, SQL diagnostics, dumps/restores, cache cleanup, and backup validation.</li>
-                                <li>Execute production change activities including MOP/SOP preparation, CR coordination, release sanity checks, cluster upgrade and certificate renewal support, SSL/TLS certificate updates, load balancer/Nginx changes, and patching readiness.</li>
-                                <li>Automate operational reports and data extracts using Bash/Python/PHP scripts, cron jobs, PostgreSQL COPY, SCP, and email workflows for registration, roaming, rating summary, FWA/WiFi, payment reconciliation, refunds, and customer issue analysis.</li>
-                                <li>Implemented <strong>Infrastructure as Code (IaC)</strong> workflows and GitOps principles using <strong>Argo CD</strong> and <strong>Jenkins</strong> for zero-downtime deployments.</li>
-                                <li>Optimized and debugged <strong>Kubernetes</strong> deployments, services, and ingress configurations to ensure high availability and scalability.</li>
+                                <li>Assisting with month end reconciliations</li>
+                                <li>Credit control duties- identifying and chasing any outstanding invoices</li>
+                                <li>Bank reconciliation, Accruals and prepayments</li>
+                                <li>Batching and matching credit reports</li>
+                                <li>Purchase ledger duties- reconciling suppliers statements and matching delivery notes</li>
+                                <li>Consolidating monthly management accounts</li>
+                                <li>Advising head of departments on KPIs and budgets</li>
                             </ul>
-                            <h4 class="jd-header" style="margin-top: 1.5rem;">// RELEVANT SKILLS</h4>
-                            <div class="jd-skills">
-                                <span class="skill-tag">Kubernetes</span>
-                                <span class="skill-tag">Argo CD</span>
-                                <span class="skill-tag">Jenkins</span>
-                                <span class="skill-tag">Dynatrace</span>
-                                <span class="skill-tag">ELK Stack</span>
-                                <span class="skill-tag">PostgreSQL</span>
-                                <span class="skill-tag">Python</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -211,117 +191,25 @@
                 <div class="exp-item">
                     <div class="exp-header">
                         <div class="exp-left">
-                            <img src="https://www.google.com/s2/favicons?domain=praavahealth.com&sz=128"
-                                alt="Praava Health Logo" class="exp-logo">
                             <div class="exp-meta">
-                                <h3>DevOps Engineer</h3>
-                                <p>Praava Health</p>
-                                <span>2024 - 2025</span>
+                                <h3>Sales Advisor</h3>
+                                <p>Ikea</p>
+                                <span>2021 - 2023</span>
                             </div>
                         </div>
                         <div class="exp-right">
-                            <button class="jd-toggle-btn">VIEW ROLE ↴</button>
+                            <button class="jd-toggle-btn">VIEW DETAILS ↴</button>
                         </div>
                     </div>
                     <div class="jd-content">
                         <div class="jd-content-inner">
                             <h4 class="jd-header">// KEY RESPONSIBILITIES</h4>
                             <ul>
-                                <li>Planned and executed CI/CD deployment workflows for Node.js applications, migrating manual build, test, and release tasks into Jenkins pipelines.</li>
-                                <li>Built automated cloud infrastructure using Terraform and AWS/Azure services; strengthened environment consistency through infrastructure-as-code practices.</li>
-                                <li>Implemented CI/CD security controls and deployment best practices using tools such as SonarQube, Trivy, Kubesec, and controlled pipeline stages.</li>
-                                <li>Dockerized Python and Laravel applications and migrated workloads to AWS to improve reliability, repeatability, and security posture.</li>
-                                <li>Automated server configuration and application deployment with Ansible, designed PostgreSQL HA/failover with HAProxy/Patroni, and reduced Azure cloud spending by USD 4,800 annually.</li>
-                                <li>Architected resilient cloud topologies in <strong>AWS (EC2, RDS, VPC, Load Balancers)</strong> and <strong>Azure</strong> focusing on fault tolerance.</li>
-                                <li>Designed and provisioned <strong>Terraform</strong> modules to automate repeatable cloud resource provisioning and lifecycle management.</li>
+                                <li>Delivered expert customer service across my department, providing tailored solutions based on customer needs and space requirements.</li>
+                                <li>Specialised in wardrobe planning using IKEAs PAX design system, creating detailed 3D wardrobe solutions.</li>
+                                <li>Designed and customized wardrobes internally and externally to meet individual requirements.</li>
+                                <li>Managed consultations lasting from 30 minutes to 2 hours including complex, high value orders for trade customers requiring multiple designs.</li>
                             </ul>
-                            <h4 class="jd-header" style="margin-top: 1.5rem;">// RELEVANT SKILLS</h4>
-                            <div class="jd-skills">
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">Jenkins</span>
-                                <span class="skill-tag">Terraform</span>
-                                <span class="skill-tag">AWS / Azure</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">Ansible</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <div class="exp-left">
-                            <img src="https://www.google.com/s2/favicons?domain=technohaven.com&sz=128"
-                                alt="Technohaven Logo" class="exp-logo">
-                            <div class="exp-meta">
-                                <h3>DevOps Engineer</h3>
-                                <p>Technohaven Co.</p>
-                                <span>2023 - 2024</span>
-                            </div>
-                        </div>
-                        <div class="exp-right">
-                            <button class="jd-toggle-btn">VIEW ROLE ↴</button>
-                        </div>
-                    </div>
-                    <div class="jd-content">
-                        <div class="jd-content-inner">
-                            <h4 class="jd-header">// KEY RESPONSIBILITIES</h4>
-                            <ul>
-                                <li>Streamlined Jenkins CI/CD pipelines for Java Spring Boot, Rust Actix Web, Node.js Express/React/Angular, Python FastAPI, and PHP Laravel services.</li>
-                                <li>Planned deployment strategy across DC, DR, and Far-DR environments, including artifact preservation, backup, restore, release rollout, and rollback readiness.</li>
-                                <li>Configured Nginx reverse proxy and service routing to support reliable application delivery across multiple workloads and environments.</li>
-                                <li>Implemented application and network monitoring using Elastic Stack, Nagios, and SNMP to track system health, availability, and performance.</li>
-                                <li>Automated configuration management and application deployment with Ansible for faster, repeatable release execution.</li>
-                                <li>Worked with developers, QA, and operations teams to troubleshoot deployment issues and improve production support processes.</li>
-                                <li>Authored comprehensive <strong>Ansible</strong> playbooks to standardize environment configurations and drastically reduce manual setup time.</li>
-                                <li>Standardized logging and monitoring pipelines using <strong>Elastic Stack (ELK)</strong> for centralized observability and alerting.</li>
-                            </ul>
-                            <h4 class="jd-header" style="margin-top: 1.5rem;">// RELEVANT SKILLS</h4>
-                            <div class="jd-skills">
-                                <span class="skill-tag">Jenkins</span>
-                                <span class="skill-tag">Nginx</span>
-                                <span class="skill-tag">Elastic Stack</span>
-                                <span class="skill-tag">Nagios</span>
-                                <span class="skill-tag">Ansible</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <div class="exp-left">
-                            <img src="./square-logo.png" alt="Square InformatiX Logo" class="exp-logo">
-                            <div class="exp-meta">
-                                <h3>Network Engineer</h3>
-                                <p>Square InformatiX</p>
-                                <span>2020 - 2023</span>
-                            </div>
-                        </div>
-                        <div class="exp-right">
-                            <button class="jd-toggle-btn">VIEW ROLE ↴</button>
-                        </div>
-                    </div>
-                    <div class="jd-content">
-                        <div class="jd-content-inner">
-                            <h4 class="jd-header">// KEY RESPONSIBILITIES</h4>
-                            <ul>
-                                <li>Installed, configured, and provisioned Cisco and MikroTik networking devices for production and data center environments.</li>
-                                <li>Monitored and managed data center infrastructure, including network availability, UPS/AVR power systems, VMs, and required software services.</li>
-                                <li>Provisioned virtual machines and supported baseband and satellite hub modem configuration as required by operations teams.</li>
-                                <li>Identified, troubleshot, and resolved network, server access, and data center issues to maintain service continuity and operational uptime.</li>
-                                <li>Built a strong foundation in Linux/server administration, networking, incident response, and infrastructure operations that supports DevOps reliability work.</li>
-                                <li>Administered and hardened <strong>Linux/UNIX</strong> server environments to serve as robust foundations for enterprise applications.</li>
-                                <li>Deployed virtualization solutions using <strong>VMware/Hyper-V</strong> to optimize hardware utilization and resource allocation.</li>
-                            </ul>
-                            <h4 class="jd-header" style="margin-top: 1.5rem;">// RELEVANT SKILLS</h4>
-                            <div class="jd-skills">
-                                <span class="skill-tag">Cisco</span>
-                                <span class="skill-tag">MikroTik</span>
-                                <span class="skill-tag">Linux</span>
-                                <span class="skill-tag">Networking</span>
-                                <span class="skill-tag">VMware</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -331,61 +219,66 @@
 
         <section class="projects" id="projects">
             <h2 class="section-heading sticky-heading">PROJECTS</h2>
-            <div class="project-list">
-
-                <div class="project-item">
-                    <div class="project-meta">
-                        <img src="https://play-lh.googleusercontent.com/BEw4lSI7rCmspVpUx2c4E67m8g3OPcdLc8YoKvVZ0yPM_S604ObW2b_biv9zewdOE-QLj6DPLmQ0M7WOzk-X2Q"
-                            alt="Robi Logo" class="project-logo">
-                        <h3>My ROBI Application</h3>
+            <div class="exp-list">
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div class="exp-left">
+                            <div class="exp-meta">
+                                <h3 style="font-size: 1.5rem; text-transform: none;">Dissertation: Evaluation of Honeypot Technologies</h3>
+                                <p style="font-size: 1rem; color: var(--text); opacity: 0.7;">Detecting and Analysing Malicious Network Activity</p>
+                            </div>
+                        </div>
+                        <div class="exp-right">
+                            <button class="jd-toggle-btn">VIEW DETAILS ↴</button>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://play.google.com/store/apps/details?id=net.omobio.robisc&hl=en" target="_blank"
-                            class="project-link">PLAYSTORE ↗</a>
-                        <a href="https://apps.apple.com/us/app/my-robi/id963785828" target="_blank"
-                            class="project-link">IOS STORE ↗</a>
-                        <a href="https://www.robi.com.bd/" target="_blank" class="project-link">WEBSITE ↗</a>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-meta">
-                        <img src="https://www.google.com/s2/favicons?domain=praavahealth.com&sz=128"
-                            alt="Praava Health Logo" class="project-logo">
-                        <h3>Praava Health</h3>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://play.google.com/store/apps/details?id=com.praavahealth.patientportal.app&hl=en"
-                            target="_blank" class="project-link">PLAYSTORE ↗</a>
-                        <a href="https://apps.apple.com/us/app/praava-health/id6748116664" target="_blank"
-                            class="project-link">IOS STORE ↗</a>
-                        <a href="https://praavahealth.com" target="_blank" class="project-link">WEBSITE ↗</a>
+                    <div class="jd-content">
+                        <div class="jd-content-inner">
+                            <ul>
+                                <li>Designed and implemented a controlled virtual lab to evaluate the effectiveness of Cowrie, Kippo and OpenCanary honeypots for detecting and analysing malicious network activity.</li>
+                                <li>Configured and deployed honeypots using Docker on Ubuntu Linux, collecting and analysing attack data including authentication attempts, command execution and security event logs.</li>
+                                <li>Compared platform performance using metrics such as CPU and memory usage, response times, log generation and behavioural visibility under simulated attack scenarios.</li>
+                                <li>Assessed the strength and limitations of different honeypots for threat detection, attacker behaviour analysis and enterprise security monitoring.</li>
+                                <li>Strengthened practical skills in Linux, Docker, network security, cyber threat analysis, logging, security monitoring and technical research, producing recommendations for appropriate honeypot deployment based on operational requirements.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="project-item">
-                    <div class="project-meta">
-                        <img src="https://www.google.com/s2/favicons?domain=eventa.live&sz=128" alt="Eventa.live Logo"
-                            class="project-logo">
-                        <h3>Eventa.live</h3>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://play.google.com/store/apps/details?id=com.eventa&pcampaignid=web_share"
-                            target="_blank" class="project-link">PLAYSTORE ↗</a>
-                        <a href="https://apps.apple.com/us/app/eventa-live/id6745977189" target="_blank"
-                            class="project-link">IOS STORE ↗</a>
-                        <a href="https://eventa.live" target="_blank" class="project-link">WEBSITE ↗</a>
-                    </div>
+        <section class="skills" id="skills" style="padding: 5rem 4rem;">
+            <h2 class="section-heading sticky-heading">SKILLS</h2>
+            <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                
+                <div class="skill-category" style="background: rgba(0,255,204,0.05); border: 1px solid rgba(0,255,204,0.2); padding: 2rem; border-radius: 8px;">
+                    <h3 style="color: var(--accent); font-family: var(--font-heading); margin-bottom: 1rem; letter-spacing: 1px;"><i class="fa-solid fa-shield-halved" style="margin-right: 10px;"></i>CYBER SECURITY</h3>
+                    <ul style="list-style-type: none; line-height: 2;">
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 10px;"></i>Ethical Hacking</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 10px;"></i>Threat Hunting</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 10px;"></i>Digital Forensics</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 10px;"></i>Vulnerability Assessment</li>
+                    </ul>
                 </div>
 
-                <div class="project-item">
-                    <div class="project-meta">
-                        <img src="./square-logo.png" alt="Square Logo" class="project-logo">
-                        <h3>Square HUB satellite service</h3>
-                    </div>
-                    <div class="project-links">
-                        <a href="http://www.squareit.com.bd" target="_blank" class="project-link">WEBSITE ↗</a>
-                    </div>
+                <div class="skill-category" style="background: rgba(0,255,204,0.05); border: 1px solid rgba(0,255,204,0.2); padding: 2rem; border-radius: 8px;">
+                    <h3 style="color: var(--accent); font-family: var(--font-heading); margin-bottom: 1rem; letter-spacing: 1px;"><i class="fa-solid fa-network-wired" style="margin-right: 10px;"></i>NETWORKING & OS</h3>
+                    <ul style="list-style-type: none; line-height: 2;">
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 10px;"></i>TCP/IP, Network Security</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 10px;"></i>Cisco Packet Tracer</li>
+                        <li><i class="fa-brands fa-linux" style="color: var(--accent); margin-right: 10px;"></i>Linux (Ubuntu/Kali)</li>
+                        <li><i class="fa-brands fa-windows" style="color: var(--accent); margin-right: 10px;"></i>Windows</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category" style="background: rgba(0,255,204,0.05); border: 1px solid rgba(0,255,204,0.2); padding: 2rem; border-radius: 8px;">
+                    <h3 style="color: var(--accent); font-family: var(--font-heading); margin-bottom: 1rem; letter-spacing: 1px;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right: 10px;"></i>TOOLS & PROGRAMMING</h3>
+                    <ul style="list-style-type: none; line-height: 2;">
+                        <li><i class="fa-brands fa-python" style="color: var(--accent); margin-right: 10px;"></i>Python, JavaScript</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 10px;"></i>Wireshark, Nmap</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 10px;"></i>Burp Suite, Metasploit</li>
+                        <li><i class="fa-brands fa-docker" style="color: var(--accent); margin-right: 10px;"></i>Docker, VirtualBox</li>
+                    </ul>
                 </div>
 
             </div>
@@ -397,23 +290,24 @@
 
                 <div class="project-item">
                     <div class="project-meta">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Red_Hat_logo.svg"
-                            alt="Red Hat Logo" class="project-logo">
-                        <h3>Red Hat Certified System Administrator (RHCSA)</h3>
+                        <h3>CompTIA Security+</h3>
                     </div>
                     <div class="project-links">
-                        <span class="project-link" style="border:none; pointer-events:none;">RHEL v9</span>
+                        <span class="project-link" style="border:none; pointer-events:none;">In Progress</span>
                     </div>
                 </div>
 
                 <div class="project-item">
                     <div class="project-meta">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-                            alt="AWS Logo" class="project-logo">
-                        <h3>AWS Certified Solutions Architect - Associate</h3>
+                        <h3>TryHackMe</h3>
+                        <p style="color:var(--text); opacity:0.7; font-family:var(--font-body); font-size:1rem; margin-top:5px;">SOC Level 1 learning path</p>
                     </div>
-                    <div class="project-links">
-                        <span class="project-link" style="border:none; pointer-events:none;">SAA-C03</span>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-meta">
+                        <h3>TryHackMe</h3>
+                        <p style="color:var(--text); opacity:0.7; font-family:var(--font-body); font-size:1rem; margin-top:5px;">Jr Penetration tester learning path</p>
                     </div>
                 </div>
 
@@ -423,55 +317,32 @@
         <section class="education" id="education">
             <h2 class="section-heading sticky-heading">EDUCATION</h2>
             <div class="project-list">
-
                 <div class="project-item" style="flex-wrap: wrap;">
                     <div class="project-meta" style="flex: 1; min-width: 300px;">
-                        <img src="./cuet-logo.png"
-                            onerror="this.src='https://ui-avatars.com/api/?name=CUET&background=fff&color=111&size=128'"
-                            alt="CUET Logo" class="project-logo">
                         <div>
-                            <h3>Chittagong University of Engineering & Technology</h3>
-                            <p
-                                style="color:var(--text); opacity:0.7; font-family:var(--font-body); font-size:1rem; margin-top:5px;">
-                                B.Sc. in Electronics & Telecommunication Engineering</p>
+                            <h3>Kingston University</h3>
+                            <p style="color:var(--text); opacity:0.7; font-family:var(--font-body); font-size:1rem; margin-top:5px;">
+                                BSc (Hons) Cyber Security & Digital Forensics
+                            </p>
+                            <p style="color:var(--accent); font-family:var(--font-body); font-size:0.9rem; margin-top:5px;">
+                                Classification: Upper Second Class Honours (2:1)
+                            </p>
                         </div>
                     </div>
                     <div class="project-links">
-                        <a href="https://cuet.ac.bd/" target="_blank" class="project-link">WEBSITE ↗</a>
-                        <span class="project-link" style="border:none; pointer-events:none;">Sep 2019</span>
+                        <span class="project-link" style="border:none; pointer-events:none;">2023 - 2026</span>
                     </div>
                 </div>
-
-                <div class="project-item" style="flex-wrap: wrap;">
-                    <div class="project-meta" style="flex: 1; min-width: 300px;">
-                        <img src="https://www.google.com/s2/favicons?domain=rgcc.ac.bd&sz=128"
-                            onerror="this.src='https://ui-avatars.com/api/?name=RGCC&background=fff&color=111&size=128'"
-                            alt="College Logo" class="project-logo">
-                        <div>
-                            <h3>Rajshahi Govt. City College</h3>
-                            <p
-                                style="color:var(--text); opacity:0.7; font-family:var(--font-body); font-size:1rem; margin-top:5px;">
-                                Higher Secondary Certificate, Science</p>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://rgcc.ac.bd/" target="_blank" class="project-link">WEBSITE ↗</a>
-                        <span class="project-link" style="border:none; pointer-events:none;">Apr 2014</span>
-                    </div>
-                </div>
-
             </div>
         </section>
 
         <section class="contact" id="contact">
-            <h1 class="huge-text">LET'S TALK</h1>
-            <div class="contact-links">
-                <a href="mailto:akibhasan.bd@gmail.com" class="hover-link">EMAIL ME</a>
-                <a href="https://linkedin.com/in/akibhasan15" target="_blank" class="hover-link">LINKEDIN</a>
-                <a href="https://github.com/akibhasan15" target="_blank" class="hover-link">GITHUB</a>
-                <a href="https://bitbucket.org/akibhasan15" target="_blank" class="hover-link">BITBUCKET</a>
+            <h1 class="huge-text" style="font-family: var(--font-heading); font-size: 15vw; text-align: center; margin: 4rem 0;">LET'S TALK</h1>
+            <div class="contact-links" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 4rem;">
+                <a href="mailto:emirqassim@outlook.com" class="hover-link" style="font-size: 1.2rem; text-decoration: none; color: var(--text);">EMAIL ME</a>
+                <a href="tel:07411191185" class="hover-link" style="font-size: 1.2rem; text-decoration: none; color: var(--text);">CALL ME</a>
             </div>
-            <p class="footer-credit">© 2026 AKIB HASAN.</p>
+            <p class="footer-credit" style="text-align: center; opacity: 0.5;">© 2026 EMIR QASSIM.</p>
         </section>
 
     </div>

@@ -102,7 +102,7 @@ expHeaders.forEach(header => {
         document.querySelectorAll('.exp-item').forEach(other => {
             if (other !== item) {
                 other.classList.remove('active');
-                other.querySelector('.jd-toggle-btn').innerText = 'VIEW ROLE ↴';
+                other.querySelector('.jd-toggle-btn').innerText = 'VIEW DETAILS ↴';
             }
         });
 
@@ -111,7 +111,7 @@ expHeaders.forEach(header => {
         if (item.classList.contains('active')) {
             btn.innerText = 'CLOSE ✕';
         } else {
-            btn.innerText = 'VIEW ROLE ↴';
+            btn.innerText = 'VIEW DETAILS ↴';
         }
     });
 
@@ -214,7 +214,7 @@ let progress = 0;
 const progressText = document.getElementById('progress-text');
 const progressBar = document.getElementById('progress-bar');
 const loadingCmd = document.getElementById('loading-cmd');
-const cmdText = "kubectl -n prod exec -it akib-portfolio -- bash";
+const cmdText = "nmap -sS -A -T4 192.168.1.0/24";
 let cmdIndex = 0;
 
 const loadingInterval = setInterval(() => {
@@ -360,22 +360,22 @@ function initTerminalStory() {
         termK8s.innerHTML = '';
 
         // Phase 1: Normal operations
-        await addLine(termK8s, '<span class="term-green">k8s-events:</span> cluster-autoscaler: Node count optimal (3/5)');
-        await addLine(termMonitor, '<span class="term-green">[OK]</span> auth-service running (latency: 22ms)');
+        await addLine(termK8s, '<span class="term-green">msfconsole:</span> Starting Metasploit Framework...');
+        await addLine(termMonitor, '<span class="term-green">[OK]</span> SIEM agent running (Active: yes)');
         await sleep(1000);
-        await addLine(termMonitor, '<span class="term-green">[OK]</span> auth-service running (latency: 25ms)');
+        await addLine(termMonitor, '<span class="term-green">[OK]</span> Inbound traffic monitoring: normal');
         await sleep(800);
         
         // Phase 2: Attack detected
-        await addLine(termMonitor, '<span class="term-yellow">[WARN]</span> Sudden spike in request volume detected!');
-        await addLine(termK8s, '<span class="term-yellow">k8s-events:</span> HPA triggered for auth-service (CPU > 90%)');
+        await addLine(termMonitor, '<span class="term-yellow">[WARN]</span> Multiple failed SSH logins detected');
+        await addLine(termK8s, '<span class="term-yellow">msfconsole:</span> exploit/linux/ssh/brute configured');
         await sleep(500);
-        await addLine(termMonitor, '<span class="term-red">[CRITICAL]</span> DDoS signature matched. auth-service under heavy load.');
-        await addLine(termK8s, '<span class="term-yellow">k8s-events:</span> Scaling ReplicaSet auth-service-7bb8c from 3 to 10');
+        await addLine(termMonitor, '<span class="term-red">[CRITICAL]</span> Brute force signature matched. Source IP: 203.0.113.42');
+        await addLine(termK8s, '<span class="term-yellow">msfconsole:</span> Running dictionary attack...');
         await sleep(500);
-        await addLine(termMonitor, '<span class="term-red">[ALERT]</span> auth-service latency: 3042ms');
-        await addLine(termMonitor, '<span class="term-red">[ALERT]</span> api-gateway cascading failure warning...');
-        await addLine(termK8s, '<span class="term-red">k8s-events:</span> Pod auth-service-7bb8c-x9kz failed readiness probe');
+        await addLine(termMonitor, '<span class="term-red">[ALERT]</span> Successful SSH login from malicious IP');
+        await addLine(termMonitor, '<span class="term-red">[ALERT]</span> Privilege escalation attempted...');
+        await addLine(termK8s, '<span class="term-red">msfconsole:</span> Session 1 opened (root access granted)');
         
         // Phase 3: Response
         await sleep(1000);
@@ -384,9 +384,9 @@ function initTerminalStory() {
         cmdLine.innerHTML = '<span class="term-yellow">$</span> ';
         termResponse.appendChild(cmdLine);
         
-        await typeText(cmdLine, 'kubectl get pods -n prod | grep auth-service');
+        await typeText(cmdLine, 'cat /var/log/auth.log | grep sshd');
         await sleep(400);
-        await addLine(termResponse, 'auth-service-7bb8c...   0/1     CrashLoopBackOff   12   2m');
+        await addLine(termResponse, 'Accepted password for root from 203.0.113.42 port 53892');
         
         await sleep(800);
         const cmdLine2 = document.createElement('div');
@@ -394,21 +394,20 @@ function initTerminalStory() {
         cmdLine2.innerHTML = '<span class="term-yellow">$</span> ';
         termResponse.appendChild(cmdLine2);
         
-        await typeText(cmdLine2, 'kubectl apply -f rate-limit-policy.yaml');
+        await typeText(cmdLine2, 'iptables -A INPUT -s 203.0.113.42 -j DROP');
         await sleep(400);
-        await addLine(termResponse, 'networkpolicy.networking.k8s.io/auth-rate-limit created');
-        await addLine(termK8s, '<span class="term-green">k8s-events:</span> NetworkPolicy auth-rate-limit configured');
+        await addLine(termResponse, 'Rule added to DROP traffic from 203.0.113.42');
+        await addLine(termK8s, '<span class="term-red">msfconsole:</span> Session 1 died (Connection reset)');
         await sleep(600);
         
         // Phase 4: Resolution
-        await addLine(termMonitor, '<span class="term-yellow">[INFO]</span> Rate limit policy applied. Dropping malicious packets...');
+        await addLine(termMonitor, '<span class="term-yellow">[INFO]</span> IP address blocked by firewall rule.');
         await sleep(1000);
-        await addLine(termK8s, '<span class="term-green">k8s-events:</span> Pod auth-service-7bb8c-x9kz readiness probe passed');
-        await addLine(termMonitor, '<span class="term-green">[OK]</span> auth-service recovering (latency: 450ms)');
+        await addLine(termK8s, '<span class="term-green">msfconsole:</span> Exploit failed [unreachable]');
+        await addLine(termMonitor, '<span class="term-green">[OK]</span> Threat neutralized.');
         await sleep(800);
-        await addLine(termK8s, '<span class="term-green">k8s-events:</span> HPA scaling down auth-service to 3 replicas');
-        await addLine(termMonitor, '<span class="term-green">[OK]</span> auth-service running (latency: 20ms)');
-        await addLine(termMonitor, '<span class="term-green">[OK]</span> System stabilized.');
+        await addLine(termK8s, '<span class="term-green">msfconsole:</span> exit');
+        await addLine(termMonitor, '<span class="term-green">[OK]</span> Logging enabled. System stabilized.');
         
         // Loop after a delay
         await sleep(5000);
@@ -419,3 +418,23 @@ function initTerminalStory() {
 }
 
 initTerminalStory();
+
+// Mobile Nav Toggle Logic
+const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+const mainNav = document.getElementById('main-nav');
+
+if (mobileNavToggle && mainNav) {
+    mobileNavToggle.addEventListener('click', () => {
+        mobileNavToggle.classList.toggle('active');
+        mainNav.classList.toggle('active');
+    });
+
+    // Close mobile nav when clicking a link
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNavToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+        });
+    });
+}

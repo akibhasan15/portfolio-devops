@@ -1,9 +1,9 @@
 :root {
-    --bg: #091F1A;
-    --text: #E0ECE9;
-    --accent: #FF5E00;
-    --font-heading: 'Anton', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --bg: #0a0a0a;
+    --text: #e0e0e0;
+    --accent: #00ffcc;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Fira Code', monospace;
 }
 
 * {
@@ -13,6 +13,84 @@
     cursor: none;
     /* Hide default cursor */
 }
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    color: var(--text);
+}
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 red;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 blue;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+@keyframes glitch-anim {
+    0% { clip: rect(22px, 9999px, 86px, 0); }
+    10% { clip: rect(69px, 9999px, 73px, 0); }
+    20% { clip: rect(8px, 9999px, 12px, 0); }
+    30% { clip: rect(98px, 9999px, 46px, 0); }
+    40% { clip: rect(22px, 9999px, 13px, 0); }
+    50% { clip: rect(61px, 9999px, 94px, 0); }
+    60% { clip: rect(55px, 9999px, 34px, 0); }
+    70% { clip: rect(38px, 9999px, 45px, 0); }
+    80% { clip: rect(81px, 9999px, 96px, 0); }
+    90% { clip: rect(22px, 9999px, 78px, 0); }
+    100% { clip: rect(10px, 9999px, 35px, 0); }
+}
+@keyframes glitch-anim2 {
+    0% { clip: rect(32px, 9999px, 44px, 0); }
+    10% { clip: rect(51px, 9999px, 81px, 0); }
+    20% { clip: rect(13px, 9999px, 19px, 0); }
+    30% { clip: rect(88px, 9999px, 35px, 0); }
+    40% { clip: rect(31px, 9999px, 29px, 0); }
+    50% { clip: rect(78px, 9999px, 59px, 0); }
+    60% { clip: rect(41px, 9999px, 48px, 0); }
+    70% { clip: rect(26px, 9999px, 57px, 0); }
+    80% { clip: rect(91px, 9999px, 72px, 0); }
+    90% { clip: rect(33px, 9999px, 64px, 0); }
+    100% { clip: rect(15px, 9999px, 21px, 0); }
+}
+
+/* Mobile Nav Toggle */
+.mobile-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 10001;
+    cursor: pointer;
+}
+.mobile-nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+.mobile-nav-toggle.active span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
+.mobile-nav-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-nav-toggle.active span:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
 
 html.lenis,
 html.lenis body {
@@ -450,7 +528,7 @@ body {
 
 .hero-title h1 {
     font-family: var(--font-heading);
-    font-size: 22vw;
+    font-size: 14vw;
     line-height: 0.9;
     letter-spacing: -0.02em;
     text-transform: uppercase;
@@ -1175,7 +1253,7 @@ body {
     }
 
     .hero-title h1 {
-        font-size: 28vw;
+        font-size: 16vw;
         white-space: normal;
         word-break: break-word;
         transform: translateY(0);
@@ -1403,3 +1481,33 @@ body {
         cursor: auto;
     }
 }
+@media (max-width: 900px) {
+    .mobile-nav-toggle {
+        display: flex;
+    }
+    .nav {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100vw;
+        max-width: 100vw;
+        height: 100vh;
+        background: rgba(5, 10, 15, 0.95);
+        backdrop-filter: blur(20px);
+        padding-top: 5rem;
+        transition: right 0.4s ease;
+        border-radius: 0;
+    }
+    .nav.active {
+        right: 0;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .hero-title h1 {
+        font-size: 15vw;
+    }
+}
+
