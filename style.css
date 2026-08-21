@@ -456,14 +456,12 @@ body {
 .hero-title h1 {
     font-family: var(--font-heading);
     font-size: 14vw;
-    line-height: 0.9;
+    line-height: 1.1;
     letter-spacing: -0.02em;
     text-transform: uppercase;
     margin: 0;
-    padding: 0 2vw;
+    padding: 2vw;
     white-space: nowrap;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    transform: translateY(110%);
     cursor: default;
     color: var(--text);
 }
@@ -1291,8 +1289,9 @@ body {
         word-break: break-word;
         transform: translateY(0);
         text-align: center;
-        line-height: 0.9;
+        line-height: 1.1;
         letter-spacing: -0.03em;
+        padding: 4vw 0;
     }
 
     .hero-title .indent {
