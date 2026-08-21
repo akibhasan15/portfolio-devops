@@ -1,10 +1,11 @@
 :root {
-    --bg: #091F1A;
-    --bg-panel: rgba(4, 18, 14, 0.78);
-    --text: #E0ECE9;
+    --bg: #06090E;
+    --bg-panel: rgba(10, 16, 26, 0.85);
+    --text: #E6EDF3;
     --accent: #FF5E00;
-    --accent-glow: rgba(255, 94, 0, 0.4);
-    --cyan: #00ffcc;
+    --accent-glow: rgba(255, 94, 0, 0.45);
+    --cyan: #00F0FF;
+    --emerald: #00FF9D;
     --font-heading: 'Orbitron', sans-serif;
     --font-body: 'Inter', sans-serif;
     --font-mono: 'Fira Code', monospace;
@@ -89,13 +90,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80vw;
-    height: 80vh;
+    width: 85vw;
+    height: 85vh;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 240, 181, 0.15) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, rgba(255, 94, 0, 0.05) 45%, transparent 70%);
     pointer-events: none;
     z-index: 0;
-    filter: blur(80px);
+    filter: blur(90px);
     animation: pulseGlow 15s infinite alternate ease-in-out;
 }
 
@@ -555,7 +556,7 @@ body {
     width: 120%;
     height: 140%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(ellipse at center, rgba(9, 31, 26, 0.9) 0%, rgba(9, 31, 26, 0.6) 45%, rgba(9, 31, 26, 0) 75%);
+    background: radial-gradient(ellipse at center, rgba(6, 9, 14, 0.95) 0%, rgba(6, 9, 14, 0.7) 45%, rgba(6, 9, 14, 0) 75%);
     z-index: -1;
     pointer-events: none;
     filter: blur(8px);
@@ -572,10 +573,10 @@ body {
     padding: 0.2vw 1vw;
     white-space: nowrap;
     cursor: default;
-    background: linear-gradient(180deg, #FFFFFF 20%, #B8ECE2 80%, #64C5B3 100%);
+    background: linear-gradient(180deg, #FFFFFF 20%, #C9E8FF 70%, #00F0FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 25px rgba(0, 255, 204, 0.18));
+    filter: drop-shadow(0 0 25px rgba(0, 240, 255, 0.22));
     position: relative;
 }
 
@@ -724,10 +725,10 @@ body {
 /* Cyber Tech Ribbon Marquee */
 .marquee-section {
     padding: 2.2rem 0;
-    background: linear-gradient(180deg, rgba(4, 18, 14, 0.95), rgba(8, 28, 23, 0.98), rgba(4, 18, 14, 0.95));
+    background: linear-gradient(180deg, rgba(6, 9, 14, 0.96), rgba(10, 18, 30, 0.98), rgba(6, 9, 14, 0.96));
     border-top: 1px solid rgba(255, 94, 0, 0.35);
     border-bottom: 1px solid rgba(255, 94, 0, 0.35);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(255, 94, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(0, 240, 255, 0.04);
     margin: 4.5rem 0;
     width: 100%;
     position: relative;

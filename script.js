@@ -163,7 +163,7 @@ if (meshCanvas) {
             this.vy = (Math.random() - 0.5) * 0.5;
             this.radius = Math.random() * 1.8 + 1.2;
             this.isAccent = Math.random() < 0.22;
-            this.baseColor = this.isAccent ? '255, 94, 0' : '0, 255, 204';
+            this.baseColor = this.isAccent ? '255, 94, 0' : '0, 240, 255';
             this.alpha = Math.random() * 0.4 + 0.3;
         }
 
