@@ -1489,6 +1489,8 @@ body {
         flex-direction: column;
         position: fixed;
         top: 0;
+        left: auto;
+        transform: none;
         right: -100%;
         width: 100vw;
         max-width: 100vw;
@@ -1498,6 +1500,7 @@ body {
         padding-top: 5rem;
         transition: right 0.4s ease;
         border-radius: 0;
+        z-index: 999;
     }
     .nav.active {
         right: 0;
