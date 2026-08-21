@@ -339,13 +339,40 @@ const loadingInterval = setInterval(() => {
     }
 }, 50);
 
-// Infinite Marquee Animation
-gsap.to('.marquee-inner', {
-    xPercent: -50,
-    ease: "none",
-    duration: 20,
-    repeat: -1
-});
+// Dual-Direction Infinite Marquee Animation
+const trackLeft = document.querySelector('.track-left .marquee-inner');
+const trackRight = document.querySelector('.track-right .marquee-inner');
+
+if (trackLeft) {
+    const tween1 = gsap.to(trackLeft, {
+        xPercent: -50,
+        ease: "none",
+        duration: 25,
+        repeat: -1
+    });
+
+    const parent1 = trackLeft.closest('.marquee-section');
+    if (parent1) {
+        parent1.addEventListener('mouseenter', () => gsap.to(tween1, { timeScale: 0.35, duration: 0.5 }));
+        parent1.addEventListener('mouseleave', () => gsap.to(tween1, { timeScale: 1, duration: 0.5 }));
+    }
+}
+
+if (trackRight) {
+    gsap.set(trackRight, { xPercent: -50 });
+    const tween2 = gsap.to(trackRight, {
+        xPercent: 0,
+        ease: "none",
+        duration: 28,
+        repeat: -1
+    });
+
+    const parent2 = trackRight.closest('.marquee-section');
+    if (parent2) {
+        parent2.addEventListener('mouseenter', () => gsap.to(tween2, { timeScale: 0.35, duration: 0.5 }));
+        parent2.addEventListener('mouseleave', () => gsap.to(tween2, { timeScale: 1, duration: 0.5 }));
+    }
+}
 
 // Scroll Animations for About Section
 gsap.utils.toArray('.split-text').forEach(text => {

@@ -721,32 +721,70 @@ body {
     }
 }
 
-/* Marquee */
+/* Cyber Tech Ribbon Marquee */
 .marquee-section {
-    padding: 3rem 0;
-    background: var(--text);
-    color: var(--bg);
-    margin: 4rem 0;
+    padding: 2.2rem 0;
+    background: linear-gradient(180deg, rgba(4, 18, 14, 0.95), rgba(8, 28, 23, 0.98), rgba(4, 18, 14, 0.95));
+    border-top: 1px solid rgba(255, 94, 0, 0.35);
+    border-bottom: 1px solid rgba(255, 94, 0, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(255, 94, 0, 0.05);
+    margin: 4.5rem 0;
     width: 100%;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
-.marquee {
+.marquee-track {
     overflow: hidden;
     white-space: nowrap;
+    display: flex;
+    width: 100%;
 }
 
 .marquee-inner {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
     font-family: var(--font-heading);
-    font-size: 2.4rem;
-    letter-spacing: 3px;
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
+    color: var(--text);
+    will-change: transform;
+    flex-shrink: 0;
 }
 
-.marquee-inner span {
-    padding-right: 2rem;
+.marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+    cursor: default;
+    white-space: nowrap;
+}
+
+.marquee-item:hover {
+    color: #fff;
+    text-shadow: 0 0 18px rgba(0, 255, 204, 0.6);
+    transform: scale(1.04);
+}
+
+.m-dot {
+    color: var(--accent);
+    font-size: 1.05rem;
+    text-shadow: 0 0 10px rgba(255, 94, 0, 0.85);
+    display: inline-block;
+}
+
+.m-dot.alt {
+    color: var(--cyan);
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.85);
 }
 
 /* About */
@@ -1568,15 +1606,21 @@ body {
 
     /* Marquee */
     .marquee-section {
-        transform: none;
-        width: 100%;
-        left: 0;
+        padding: 1.5rem 0;
         margin: 2.5rem 0;
-        overflow: hidden;
+        gap: 0.8rem;
+        mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
     }
 
     .marquee-inner {
-        font-size: 1.6rem;
+        font-size: 1.1rem;
+        gap: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .m-dot {
+        font-size: 0.8rem;
     }
 
     /* 3. Section Padding */
