@@ -497,6 +497,22 @@ body {
     transform: translateY(20px);
 }
 
+/* Scroll Indicator (hidden on desktop) */
+.scroll-indicator {
+    display: none;
+}
+
+@keyframes scrollPulse {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(8px);
+        opacity: 0.4;
+    }
+}
+
 /* Marquee */
 .marquee-section {
     padding: 4rem 0;
@@ -1130,39 +1146,110 @@ body {
         padding: 0.3rem 0.8rem;
     }
 
-    /* 2. Hero Section */
+    /* 2. Hero Section — Revamped for Mobile Impact */
     .hero {
         padding: 0 1.5rem;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
     
     .bg-terminal {
-        display: none; /* Hide background terminals on mobile */
+        display: none;
+    }
+
+    .hero-center {
+        gap: 0;
+        margin-top: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-title {
+        width: 100%;
+        position: relative;
+        margin-bottom: 1.5rem;
     }
 
     .hero-title h1 {
-        font-size: 13vw;
+        font-size: 28vw;
         white-space: normal;
         word-break: break-word;
-        transform: translateY(0); /* Remove huge intro transform if it breaks layout */
+        transform: translateY(0);
         text-align: center;
-        line-height: 1;
+        line-height: 0.9;
+        letter-spacing: -0.03em;
     }
 
     .hero-title .indent {
         margin-left: 0;
     }
 
+    /* Accent divider bar below hero name */
+    .hero-title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: var(--accent);
+        margin: 1.5rem auto 0;
+        box-shadow: 0 0 12px var(--accent), 0 0 4px var(--accent);
+        border-radius: 2px;
+    }
+
+    /* Meta info — side by side row with divider */
     .hero-meta {
         position: static;
         text-align: center !important;
-        margin-top: 1rem;
+        margin-top: 0;
     }
 
-    .hero-center {
-        gap: 1.5rem;
-        margin-top: -10vh; /* Adjust vertical centering */
+    .hero-meta p {
+        margin-bottom: 0;
+        font-size: 0.75rem;
+        letter-spacing: 3px;
+    }
+
+    .hero-meta.left,
+    .hero-meta.right {
+        display: inline-block;
+    }
+
+    /* Scroll Indicator — visible on mobile */
+    .scroll-indicator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        position: absolute;
+        bottom: 5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    .scroll-label {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--accent);
+        opacity: 0.7;
+    }
+
+    .scroll-arrow {
+        color: var(--accent);
+        animation: scrollPulse 2s ease-in-out infinite;
+        opacity: 0.7;
+    }
+
+    .scroll-arrow svg {
+        width: 12px;
+        height: 18px;
     }
 
     /* Marquee */
@@ -1280,6 +1367,7 @@ body {
     .about-text-content {
         font-size: 1.1rem;
         max-width: 100%;
+        text-align: left;
     }
     
     .about-text-content p {
