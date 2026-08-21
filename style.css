@@ -723,14 +723,13 @@ body {
 
 /* Marquee */
 .marquee-section {
-    padding: 4rem 0;
+    padding: 3rem 0;
     background: var(--text);
     color: var(--bg);
-    transform: rotate(-2deg);
-    margin: 5rem 0;
-    width: 110vw;
+    margin: 4rem 0;
+    width: 100%;
     position: relative;
-    left: -5vw;
+    overflow: hidden;
 }
 
 .marquee {
@@ -811,10 +810,12 @@ body {
 }
 
 .about-text-content {
-    font-size: 1.5rem;
-    line-height: 1.5;
+    font-size: 1.4rem;
+    line-height: 1.6;
     color: var(--text);
-    text-align: justify;
+    text-align: left;
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 
 .lead-text {
@@ -1701,27 +1702,49 @@ body {
     }
 
     .about-text-content {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        width: 100%;
         max-width: 100%;
         text-align: left;
+        word-break: normal;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
     }
     
     .about-text-content p {
         margin-bottom: 1rem;
+        word-break: normal;
+        overflow-wrap: break-word;
+        max-width: 100%;
     }
     
     .lead-text {
-        font-size: 1.3rem;
-        line-height: 1.5;
-        margin-bottom: 1.2rem;
-        word-break: normal;
-        overflow-wrap: break-word;
+        font-size: 1.15rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1rem !important;
+        text-align: left !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        max-width: 100% !important;
     }
 
     .highlight {
-        font-size: 1em;
-        padding: 0 2px;
-        white-space: normal;
+        font-size: 1em !important;
+        padding: 0 1px !important;
+        white-space: normal !important;
+        display: inline !important;
+    }
+
+    .about-stats {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .stat-num {
